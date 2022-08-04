@@ -1,18 +1,18 @@
 <?php
 
-use ProductFilter\ProductFilterPlugin;
+use BasePlugin\BasePlugin;
 
 /**
  *
- * Plugin Name:       Product Filter
+ * Plugin Name:       Base Filter
  * Plugin URI:        https://premmerce.com
- * Description:       The plugin provide custom filter page for woocommerce
+ * Description:       1 base plugin for wordpress
  * Version:           1.0
  * Author:            Sentius Dev Team
  * Author URI:        https://premmerce.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       product-filter
+ * Text Domain:       base-plugin
  * Domain Path:       /languages
  */
 
