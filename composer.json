@@ -1,0 +1,21 @@
+{
+  "name": "hungitfs/base-plugin",
+  "type": "wordpress-plugin",
+  "description": "a plugin base for wordpress",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sentius Dev Team"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "ProductFilter\\": "src"
+    }
+  },
+  "require": {
+    "premmerce/wordpress-sdk": "^2.0",
+    "inpsyde/wp-context": "^1.3"
+  }
+
+}
