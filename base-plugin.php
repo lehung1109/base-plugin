@@ -31,7 +31,7 @@ call_user_func( function () {
 
 	register_deactivation_hook( __FILE__, [ $main, 'deactivate' ] );
 
-	register_uninstall_hook( __FILE__, [ ProductFilterPlugin::class, 'uninstall' ] );
+	register_uninstall_hook( __FILE__, [ BasePlugin::class, 'uninstall' ] );
 
 	$main->run();
 } );
