@@ -23,7 +23,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 call_user_func( function () {
 
-	require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
+    $libraries = require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
 
 	$main = new BasePlugin( __FILE__ );
 
@@ -33,5 +33,5 @@ call_user_func( function () {
 
 	register_uninstall_hook( __FILE__, [ BasePlugin::class, 'uninstall' ] );
 
-	$main->run();
+	$main->run( $libraries );
 } );

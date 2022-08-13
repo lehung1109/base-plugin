@@ -1,12 +1,7 @@
 <?php namespace BasePlugin;
 
 use Premmerce\SDK\V2\FileManager\FileManager;
-use BasePlugin\Admin\Admin;
-use BasePlugin\Frontend\Frontend;
-use BasePlugin\Ajax\Ajax;
-use BasePlugin\Rest\Rest;
-use BasePlugin\Internal\Internal;
-use Inpsyde\WpContext;
+use CustomBowl\Engine\Initialize;
 
 /**
  * Class BasePlugin
@@ -37,22 +32,12 @@ class BasePlugin {
 	/**
 	 * Run plugin part
 	 */
-	public function run() {
+	public function run( $libraries ) {
         $GLOBALS['BasePluginFileManager'] = $this->fileManager;
 
         include_once $this->fileManager->getPluginDirectory() . 'src/Functions/functions.php';
 
-        new Internal( $this->fileManager );
-
-        if ( $this->context->isBackoffice() ) {
-            new Admin( $this->fileManager );
-        } elseif ( $this->context->isFrontoffice() ) {
-            new Frontend( $this->fileManager );
-        } elseif ( $this->context->isAjax() ) {
-            new Ajax( $this->fileManager );
-        } elseif ( $this->context->isRest() ) {
-            new Rest( $this->fileManager );
-        }
+        new Initialize( $libraries );
 
 	}
 
