@@ -1,7 +1,5 @@
 <?php namespace BasePlugin\Frontend;
 
-use Premmerce\SDK\V2\FileManager\FileManager;
-
 /**
  * Class Frontend
  *
@@ -9,14 +7,7 @@ use Premmerce\SDK\V2\FileManager\FileManager;
  */
 class Frontend {
 
-
-	/**
-	 * @var FileManager
-	 */
-	private $fileManager;
-
-	public function __construct( FileManager $fileManager ) {
-		$this->fileManager = $fileManager;
+	public function __construct() {
 	}
 
 }
