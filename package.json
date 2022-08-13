@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "build": "npx grunt",
-    "watch": "npx grunt watch"
+    "watch": "npx grunt watch",
+    "dev": "npx grunt dev"
   },
   "devDependencies": {
     "@lodder/grunt-postcss": "^3.1.1",
