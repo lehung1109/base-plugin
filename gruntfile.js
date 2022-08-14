@@ -87,6 +87,6 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['uglify:build', 'postcss:build']);
 
     // dev task(s).
-    grunt.registerTask('dev', ['watch', 'uglify:dev', 'postcss:dev']);
+    grunt.registerTask('dev', ['uglify:dev', 'postcss:dev', 'watch']);
 
 };
