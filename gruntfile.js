@@ -2,33 +2,6 @@ module.exports = function(grunt) {
 
     // Project configuration.
     grunt.initConfig({
-        uglify: {
-            build: {
-                files: [{
-                    expand: true,
-                    src: 'assets/**/*.js',
-                    dest: 'dist',
-                    cwd: '.',
-                    rename: function (dst, src) {
-                        return dst + '/' + src.replace('.js', '.min.js');
-                    }
-                }]
-            },
-            dev: {
-                files: [{
-                    expand: true,
-                    src: 'assets/**/*.js',
-                    dest: 'dist',
-                    cwd: '.',
-                    rename: function (dst, src) {
-                        return dst + '/' + src.replace('.js', '.min.js');
-                    }
-                }],
-                options: {
-                    sourceMap: true,
-                }
-            },
-        },
         postcss: {
             build: {
                 files: [{
@@ -37,7 +10,7 @@ module.exports = function(grunt) {
                     dest: 'dist',
                     cwd: '.',
                     rename: function (dst, src) {
-                        return dst + '/' + src.replace('.css', '.min.css');
+                        return dst + '/' + src.replace('assets/', '');
                     }
                 }],
                 options: {
@@ -58,24 +31,21 @@ module.exports = function(grunt) {
                     dest: 'dist',
                     cwd: '.',
                     rename: function (dst, src) {
-                        return dst + '/' + src.replace('.css', '.min.css');
+                        return dst + '/' + src.replace('assets/', '');
                     }
                 }],
             }
         },
         watch: {
             scripts: {
-                files: ['assets/**/*.js', 'assets/**/*.css'],
-                tasks: ['uglify:dev', 'postcss:dev'],
+                files: ['assets/**/*.css'],
+                tasks: ['postcss:dev'],
                 options: {
                     spawn: false,
                 },
             },
         },
     });
-
-    // Load the plugin that provides the "uglify" task.
-    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // Load the plugin that provides the "watch" task.
     grunt.loadNpmTasks('grunt-contrib-watch');
@@ -84,9 +54,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('@lodder/grunt-postcss');
 
     // Default task(s).
-    grunt.registerTask('default', ['uglify:build', 'postcss:build']);
+    grunt.registerTask('default', ['postcss:build']);
 
     // dev task(s).
-    grunt.registerTask('dev', ['uglify:dev', 'postcss:dev', 'watch']);
+    grunt.registerTask('start', ['postcss:dev', 'watch']);
 
 };

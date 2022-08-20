@@ -5,11 +5,12 @@
 2. ```composer install```
 3. ```composer dumpautoload -o```
 4. ```npm install```
-5. ```npm run dev``` - for watching css and js files
-6. ```npm run build``` - for build file for production
+5. ```npm run start:css``` - for watching css files
+6. ```npm run start:js``` - for watching js files
+7. ```npm run build``` - for build files for production
 
 ## STRUCTURE
 - **assets**: containing css and js files
 - **dist**: containing css and js files for production
 - **src**: for include file
-- **templates**: for template files
+- **views**: for template files

@@ -2,20 +2,21 @@
   "name": "base-plugin",
   "version": "1.0.0",
   "scripts": {
-    "build": "npx grunt",
-    "watch": "npx grunt watch",
-    "dev": "npx grunt dev"
+    "build": "npx grunt && npx babel assets --out-dir dist",
+    "start:css": "npx grunt start",
+    "start:js": "npx babel assets --watch --out-dir dist --source-maps inline"
   },
   "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.18.10",
+    "@babel/preset-react": "^7.18.6",
     "@lodder/grunt-postcss": "^3.1.1",
     "autoprefixer": "^10.4.7",
     "cssnano": "^5.1.12",
     "grunt": "^1.5.3",
     "grunt-cli": "^1.4.3",
-    "grunt-contrib-uglify": "^5.2.2",
     "grunt-contrib-watch": "^1.1.0",
     "postcss": "^8.4.14",
-    "uglify-js": "^3.16.2",
     "postcss-nested": "^5.0.6"
   }
 }
