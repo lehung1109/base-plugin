@@ -1,1 +1,0 @@
-let a=()=>{console.log(123)};let b=React.createElement("h3",null,"123");

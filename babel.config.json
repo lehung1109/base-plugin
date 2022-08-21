@@ -1,6 +1,0 @@
-{
-  "presets": ["@babel/preset-react"],
-  "minified": true,
-  "comments": false,
-  "ignore": ["./assets/vendor", "./assets/admin/components", "./assets/frontend/components", "./assets/images"]
-}

@@ -1,0 +1,1 @@
+(()=>{"use strict";var o=React.createElement((function(){console.log("test")}),null);console.log(o,(function(){console.log(123)}))})();
